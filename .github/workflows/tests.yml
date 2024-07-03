@@ -40,6 +40,7 @@ jobs:
 
       - name: Install Bats dependencies
         run: |
+          mkdir -p tests/test_helper
           git clone https://github.com/bats-core/bats-support.git tests/test_helper/bats-support
           git clone https://github.com/bats-core/bats-assert.git tests/test_helper/bats-assert
 
