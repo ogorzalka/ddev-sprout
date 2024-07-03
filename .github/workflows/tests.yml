@@ -37,13 +37,6 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y bats
-
-      - name: Install Bats dependencies
-        run: |
-          mkdir -p tests/test_helper
-          git clone https://github.com/bats-core/bats-support.git tests/test_helper/bats-support
-          git clone https://github.com/bats-core/bats-assert.git tests/test_helper/bats-assert
-
       - name: Test Addon with DDEV
         uses: ddev/github-action-add-on-test@v2
         with:
