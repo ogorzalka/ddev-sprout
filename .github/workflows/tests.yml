@@ -31,12 +31,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Set up Bats
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y bats
       - name: Test Addon with DDEV
         uses: ddev/github-action-add-on-test@v2
         with:
@@ -45,6 +39,3 @@ jobs:
           debug_enabled: ${{ github.event.inputs.debug_enabled }}
           addon_repository: ${{ env.GITHUB_REPOSITORY }}
           addon_ref: ${{ env.GITHUB_REF }}
-
-      - name: Run Bats tests
-        run: bats tests/test.bats
