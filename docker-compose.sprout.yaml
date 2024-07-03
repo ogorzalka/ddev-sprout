@@ -1,0 +1,14 @@
+#ddev-generated
+# Simple template to demonstrate sprout
+services:
+  sprout:
+    image: busybox:stable
+    container_name: ddev-${DDEV_SITENAME}-sprout
+    volumes:
+      - sprout_bin:/usr/local/bin
+    command: /bin/sh -c "while true; do sleep 1000; done"
+    networks: [default, ddev_default]
+    restart: "no"
+    labels:
+      com.ddev.site-name: ${DDEV_SITENAME}
+      com.ddev.approot: $DDEV_APPROOT
